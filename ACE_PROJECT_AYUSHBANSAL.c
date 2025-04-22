@@ -7,7 +7,6 @@ float perimeter_rectangle(float length, float width);
 float area_triangle(float a, float b, float c);
 float perimeter_triangle(float a, float b, float c);
 int validate_positive_float(float value);
-void clear_input_buffer();
 #ifndef M_PI
 #define M_PI 3.14
 #endif
@@ -24,7 +23,6 @@ int main() {
         printf("4. Exit\n");
         printf("Enter your choice (1-4): ");
         valid_input = scanf("%d", &choice);
-        clear_input_buffer();
 
         if (!valid_input || choice < 1 || choice > 4) {
             printf("Invalid choice. Please enter a number between 1 and 4.\n");
@@ -36,7 +34,6 @@ int main() {
                 do {
                     printf("Enter the radius of the circle: ");
                     valid_input = scanf("%f", &radius);
-                    clear_input_buffer();
                     if (!valid_input || !validate_positive_float(radius)) {
                         printf("Invalid input. Radius must be a positive number.\n");
                     }
@@ -50,7 +47,6 @@ int main() {
                 do {
                     printf("Enter the length of the rectangle: ");
                     valid_input = scanf("%f", &length);
-                    clear_input_buffer();
                     if (!valid_input || !validate_positive_float(length)) {
                         printf("Invalid input. Length must be a positive number.\n");
                     }
@@ -59,7 +55,6 @@ int main() {
                 do {
                     printf("Enter the width of the rectangle: ");
                     valid_input = scanf("%f", &width);
-                    clear_input_buffer();
                     if (!valid_input || !validate_positive_float(width)) {
                         printf("Invalid input. Width must be a positive number.\n");
                     }
@@ -73,7 +68,6 @@ int main() {
                 do {
                     printf("Enter the length of side a: ");
                     valid_input = scanf("%f", &a);
-                    clear_input_buffer();
                     if (!valid_input || !validate_positive_float(a)) {
                         printf("Invalid input. Side length must be a positive number.\n");
                     }
@@ -82,7 +76,6 @@ int main() {
                 do {
                     printf("Enter the length of side b: ");
                     valid_input = scanf("%f", &b);
-                    clear_input_buffer();
                     if (!valid_input || !validate_positive_float(b)) {
                         printf("Invalid input. Side length must be a positive number.\n");
                     }
@@ -91,7 +84,6 @@ int main() {
                 do {
                     printf("Enter the length of side c: ");
                     valid_input = scanf("%f", &c);
-                    clear_input_buffer();
                     if (!valid_input || !validate_positive_float(c)) {
                         printf("Invalid input. Side length must be a positive number.\n");
                     }
@@ -141,9 +133,4 @@ float perimeter_triangle(float a, float b, float c) {
 
 int validate_positive_float(float value) {
     return value > 0;
-}
-
-void clear_input_buffer() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
 }
