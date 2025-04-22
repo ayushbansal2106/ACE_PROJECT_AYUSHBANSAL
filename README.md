@@ -45,6 +45,3 @@ Follow the on-screen prompts to select a shape and enter its dimensions. The pro
 - Ensure to enter positive numeric values for dimensions.
 - The triangle sides must satisfy the triangle inequality to form a valid triangle.
 
-## Author
-
-This program was created as part of a coding assignment.
